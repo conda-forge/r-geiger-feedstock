@@ -36,7 +36,6 @@ requirements:
     - r-base
     - r-mass
     - r-rcpp >=0.11.0
-    - r-ape >=3.0_6
     - r-coda
     - r-colorspace
     - r-desolve >=1.7
@@ -44,13 +43,13 @@ requirements:
     - r-mvtnorm
     - r-ncbit
     - r-subplex
+    - r-phytools >=0.7.31
   run:
     - libopenblas
     - r-base
     - {{ native }}gcc-libs         # [win]
     - r-mass
     - r-rcpp >=0.11.0
-    - r-ape >=3.0_6
     - r-coda
     - r-colorspace
     - r-desolve >=1.7
@@ -58,6 +57,7 @@ requirements:
     - r-mvtnorm
     - r-ncbit
     - r-subplex
+    - r-phytools >=0.7.31
 
 test:
   commands:
@@ -66,7 +66,7 @@ test:
 
 about:
   home: http://www.webpages.uidaho.edu/~lukeh/software.html
-  license: GPL (>= 2)
+  license: GPL-2.0-or-later
   summary: Methods for fitting macroevolutionary models to phylogenetic trees.
   license_family: GPL3
   license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
