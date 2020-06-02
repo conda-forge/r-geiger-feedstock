@@ -1,4 +1,4 @@
-{% set version = "2.0.6.4" %}
+{% set version = "2.0.7" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,12 +10,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/geiger_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/geiger/geiger_{{ version }}.tar.gz
-  sha256: 8ddc12779b86b14b173a5c72a28c4e22784e4a7a48e6c806e48a097c2928af64
+  sha256: d200736c4ad7ed4bc55a13e7d0126ddc7fed88e245cd5706d4692aaa437e9596
 
 build:
-  merge_build_host: True  # [win]
-  skip: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  skip: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -36,7 +36,6 @@ requirements:
     - r-base
     - r-mass
     - r-rcpp >=0.11.0
-    - r-ape >=3.0_6
     - r-coda
     - r-colorspace
     - r-desolve >=1.7
@@ -44,13 +43,13 @@ requirements:
     - r-mvtnorm
     - r-ncbit
     - r-subplex
+    - r-phytools >=0.7.31
   run:
     - libopenblas
     - r-base
     - {{ native }}gcc-libs         # [win]
     - r-mass
     - r-rcpp >=0.11.0
-    - r-ape >=3.0_6
     - r-coda
     - r-colorspace
     - r-desolve >=1.7
@@ -58,6 +57,7 @@ requirements:
     - r-mvtnorm
     - r-ncbit
     - r-subplex
+    - r-phytools >=0.7.31
 
 test:
   commands:
@@ -66,10 +66,10 @@ test:
 
 about:
   home: http://www.webpages.uidaho.edu/~lukeh/software.html
-  license: GPL (>= 2)
+  license: GPL-2.0-or-later
   summary: Methods for fitting macroevolutionary models to phylogenetic trees.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
