@@ -31,7 +31,7 @@ requirements:
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
   host:
-    - libblas
+    - libopenblas
     - r-base
     - r-mass
     - r-rcpp >=0.11.0
@@ -44,7 +44,7 @@ requirements:
     - r-subplex
     - r-phytools >=0.7.31
   run:
-    - libblas
+    - libopenblas
     - r-base
     - {{ native }}gcc-libs         # [win]
     - r-mass
