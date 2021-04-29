@@ -14,7 +14,6 @@ source:
 
 build:
   merge_build_host: true  # [win]
-  skip: true  # [win]
   number: 0
   rpaths:
     - lib/R/lib/
@@ -32,7 +31,7 @@ requirements:
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
   host:
-    - libopenblas
+    - libblas
     - r-base
     - r-mass
     - r-rcpp >=0.11.0
@@ -45,7 +44,7 @@ requirements:
     - r-subplex
     - r-phytools >=0.7.31
   run:
-    - libopenblas
+    - libblas
     - r-base
     - {{ native }}gcc-libs         # [win]
     - r-mass
@@ -69,7 +68,8 @@ about:
   license: GPL-2.0-or-later
   summary: Methods for fitting macroevolutionary models to phylogenetic trees.
   license_family: GPL3
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
