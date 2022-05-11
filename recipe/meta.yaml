@@ -1,4 +1,4 @@
-{% set version = "2.0.7" %}
+{% set version = "2.0.7.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/geiger_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/geiger/geiger_{{ version }}.tar.gz
-  sha256: d200736c4ad7ed4bc55a13e7d0126ddc7fed88e245cd5706d4692aaa437e9596
+  sha256: 4f030486376508abfc03c153b854c65096dae14d2e4b1eb3406367b2235bbf90
 
 build:
   merge_build_host: true  # [win]
