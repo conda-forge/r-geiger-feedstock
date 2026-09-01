@@ -1,4 +1,4 @@
-{% set version = "2.0.11" %}
+{% set version = "2.0.12" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,12 +9,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/geiger_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/geiger/geiger_{{ version }}.tar.gz
-  sha256: dcc5a0a988439110078867e0aaf09b048e27db7f02e4cbdfe35783611fde3f69
+  sha256: 2c0a3a04c526ec5807cc6e4c12a7698b8039762d46a402efdf3f49fc5e478af4
 
 build:
   # Checking windows to see if it passes. Uncomment the line if it fails.
   # skip: true  # [win]
-  number: 3
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
